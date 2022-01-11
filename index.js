@@ -19,6 +19,8 @@ const
     bodyParser = require('body-parser'),
     app = express().use(bodyParser.json()); // creates express http server
 
+    require('dotenv').config();
+
 app.get('/', (req, res) => {
     res.send('Hello World');
 });
@@ -27,7 +29,7 @@ app.get('/', (req, res) => {
 app.get('/webhook', (req, res) => {
 
     // Your verify token. Should be a random string.
-    let VERIFY_TOKEN = 'EAAOCekxbpkoBAF858VSHLAgexXI0Th4Vea0TO7dgZCXaxOJsZBwBlV2uFZB3mrpToC9dsZC0oDZAd9uWPXzBxDtSLAOt4b1JBI4eEeQoPBZAiI1aCXTs7IeUNEaU0YT1dUtCo5WDhPTWVqZBwkcqtoBsnw4rsbLu6gjghmx0RPbNTIwcPEx5yQkxEOLxYsGZBUMZD'
+    let VERIFY_TOKEN = process.env.VERIFY_TOKEN
       
     // Parse the query params
     let mode = req.query['hub.mode'];
