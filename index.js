@@ -22,7 +22,7 @@ const
 require('dotenv').config();
 
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  res.send('Hello Worldddd');
 });
 
 // Adds support for GET requests to our webhook
